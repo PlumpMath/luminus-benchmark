@@ -1,0 +1,9 @@
+CREATE TABLE world
+(id VARCHAR(20) PRIMARY KEY,
+ randomNumber DOUBLE);
+
+;;--
+
+CREATE TABLE fortune
+(id VARCHAR(20) PRIMARY KEY,
+ message VARCHAR(500));
