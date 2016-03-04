@@ -5,12 +5,10 @@
             [compojure.route :as route]
             [hello.middleware :as middleware]))
 
-(def app-routes
+(def app
   (routes
-    (wrap-routes #'home-routes middleware/wrap-csrf)
+    #'home-routes
     (route/not-found
       (:body
         (error-page {:status 404
                      :title "page not found"})))))
-
-(def app (middleware/wrap-base #'app-routes))

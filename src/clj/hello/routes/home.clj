@@ -49,11 +49,13 @@
   (GET "/plaintext"        [] plaintext)
   (GET "/json"             [] (json-serialization)))
 
-(defroutes home-routes
-  (GET "/"                 [] "Hello, World!")
-  (GET "/db"               [] (single-query-test))
+(defroutes db-routes
+  (GET "/"                 [] (single-query-test))
   (GET "/queries/"         [] (multiple-query-test 1))
   (GET "/queries/:queries" [queries] (multiple-query-test queries))
   (GET "/fortunes"         [] (fortunes))
   (GET "/updates/"         [] (db-update 1))
   (GET "/updates/:queries" [queries] (db-update queries)))
+
+(defroutes home-routes
+  (GET "/"                 [] "Hello, World!"))

@@ -1,14 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
-  <div class="jumbotron">
-    <h1>Welcome to hello</h1>
-    <p>Time to start building your site!</p>
-    <p><a class="btn btn-primary btn-lg" href="http://luminusweb.net">Learn more &raquo;</a></p>
-  </div>
-
-  <div class="row">
-    <div class="span12">
-    {{docs|markdown}}
-    </div>
-  </div>
-{% endblock %}
+<html>
+  <body>
+    <ul>
+      {% for message in messages %}
+      <li>{{message.id}} {{message.message}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
